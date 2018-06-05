@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+		</script>
+		<script src="src/switching-layers.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            .title{
+                font-size:20px;
+            }
+            a{
+                color:red;
+                text-decoration: underline;
+            }
+             /*Example 01 starts*/
+            .layer{;position: relative;}
+            .switch-layer{position: relative;height: 250px;}
+            .layer .switch-layer div{position: absolute;width: 100%; left:0;height: 100%;}
+            .layer .switch-layer:first-child{background-color: blanchedalmond;}
+            .layer .switch-layer:nth-child(2){background-color: aliceblue;}
+            .layer .switch-layer:nth-child(3){background-color: black; color:white}
+            .layer .switch-layer:nth-child(4){background-color: yellow; color:black;}
+            .layer .switch-layer:nth-child(5){background-color: blue; color:white;}
+            .layer .switch-layer div p{position: absolute;top:50%;text-align: center;width:100%;height: 100%;}
+            .switch-layer div{display: none;}
+            .switch-layer div.active{display: block;}
+            /*Example 01 ends*/
+            /*Example 02 starts*/
+            .switching-bckg-layer{position: relative;height: 250px;}
+            .switching-bckg-layer div {position: absolute;width: 100%; left:0;height: 100%;display: none;}
+            .switching-bckg-layer div.active{display: block;}
+            .switching-bckg-layer:first-child div:nth-child(1){background-color: blue;}
+            .switching-bckg-layer:first-child div:nth-child(2){background-color: green;}
+            .switching-bckg-layer:first-child div:nth-child(3){background-color: pink;}
+            
+            .switching-bckg-layer div p{position: absolute;top:50%;text-align: center;width:100%;height: 100%;}
+            
+            .blue{background-color: blue;}
+            .green{background-color: green;}
+            .pink{background-color: pink;}
+            .yellow{background-color:yellow;}
+        
+            /*Example 02 ends*/
+        </style>
+	</head>
+	<body>
+		<div class="container">
+            <div class="row">
+                <h1 >Examples</h1>
+                <p class="title">Fixed color containers with switching layers</p>
+            </div>
+            <!-- Example 01 starts -->
+            <div class="row">
+                <div data-switch="container">
+                    <div class="layer" data-switch="main-layer">
+                        <div class="switch-layer col-sm-4" data-switch="switch-parent">
+                            <div>
+                                <p>main layer one first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer one second layer</p>
+                            </div>
+                            <div>
+                                <p>main layer one third layer</p>
+                            </div>
+                        </div>
+                        <div class="switch-layer col-sm-4" data-switch="switch-parent">
+                            <div>
+                                <p>main layer two first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer two second layer</p>
+                            </div>
+                        </div>
+                         <div class="switch-layer col-sm-4" data-switch="switch-parent">
+                            <div>
+                                <p>main layer three first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer three second layer</p>
+                            </div>
+                            <div>
+                                <p>main layer three third layer</p>
+                            </div>
+                            <div>
+                                <p>main layer three forth layer</p>
+                            </div>
+                            <div>
+                                <p>main layer three fifth layer</p>
+                            </div>
+                        </div>
+                         <div class="switch-layer col-sm-8" data-switch="switch-parent">
+                            <div>
+                                <p>main layer four first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four second layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four third layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four forth layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four fifth layer</p>
+                            </div>
+                        </div>
+                        <div class="switch-layer col-sm-4" data-switch="switch-parent">
+                            <div>
+                                <p>main layer four first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four second layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four third layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four forth layer</p>
+                            </div>
+                            <div>
+                                <p>main layer four fifth layer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Example 01 ends -->
+            <div class="row">
+                <p class="title" style="padding: 15px 0;">Switching layers with switching backgrounds</p>
+            </div>
+            <!-- Example 02 starts -->
+            <div class="row">
+                <div data-switch="container">
+                    <div class="layer" data-switch="main-layer">
+                        <div class="switching-bckg-layer col-sm-4" data-switch="switch-parent">
+                            <div>
+                                <p>main layer one first layer</p>
+                            </div>
+                            <div>
+                                <p>main layer one second layer</p>
+                            </div>
+                            <div>
+                                <p>main layer one third layer</p>
+                            </div>
+                            <div class="yellow">
+                                <p>main layer one third layer</p>
+                            </div>
+                        </div>
+                        <div class="switching-bckg-layer col-sm-4" data-switch="switch-parent">
+                            <div class="yellow">
+                                <p>This is </p>
+                            </div>
+                            <div class="blue">
+                                <p>Jquery plugin</p>
+                            </div>
+                            <div class="green">
+                                <p>by</p>
+                            </div>
+                            <div class="pink">
+                                <p><a target="_blank" href="https://github.com/krisger">Kris</a></p>
+                            </div>
+                        </div>
+                         <div class="switching-bckg-layer col-sm-4" data-switch="switch-parent">
+                            <div class="pink">
+                                <p>This is </p>
+                            </div>
+                            <div class="yellow">
+                                <p>Jquery plugin</p>
+                            </div>
+                            <div class="blue">
+                                <p>by</p>
+                            </div>
+                            <div class="green">
+                                <p><a target="_blank"  href="https://github.com/krisger">Kris</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Example 02 ends -->
+        </div>
+        <script>
+            $(function(){
+                $().switchinglayers({});
+            });
+        </script>
+	</body>
+</html>
