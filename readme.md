@@ -19,13 +19,11 @@ $(function(){
 $(function(){
 	$().switchinglayers({
 		mainLayer: $("[data-switch='main-layer']"), //you can change el selectors
-        parentSwitch: $("[data-switch='switch-parent']"), //you can change el selectors
-        switchingTime: 3, //pass seconds, it will slow down or increase speed of switching layers
+        	parentSwitch: $("[data-switch='switch-parent']"), //you can change el selectors
+        	switchingTime: 3, //pass seconds, it will slow down or increase speed of switching layers
 		activeClassName: "active" //you can change active class name
 	});
 });
-
-
 </code>
 </pre>
 </p>
