@@ -1,11 +1,11 @@
-$.fn.switchinglayers = function( options ) 
-{
+$.fn.switchinglayers = function(options) {
+	
     var mainLayer, switchArea, layerCounter = [];
     var sett = $.extend({
         container: $("[data-switch='container']"),
         mainLayer: $("[data-switch='main-layer']"),
         parentSwitch: $("[data-switch='switch-parent']"),
-		activeClassName: "active",
+	activeClassName: "active",
         switchingTime: 3 //seconds
     });
 
@@ -31,19 +31,15 @@ $.fn.switchinglayers = function( options )
             layerCounter[j] += 1; 
         }
 
-        $(sett.container).each
-        (function()
-        {
-           
+        $(sett.container).each(function() {
+		
             mainLayer = $(this).find(sett.mainLayer);
-
-            $(mainLayer).each(function(){  
+            $(mainLayer).each(function() {  
+		    
                 switchArea = $(this).find(sett.parentSwitch);	  
-
-                
-                switchArea.each(function()
-                {
-                    sCount++; 
+                switchArea.each(function() {
+                    
+		    sCount++; 
 
                     if(firstLoad){
                         layerCounter.push(0);
@@ -58,8 +54,6 @@ $.fn.switchinglayers = function( options )
                     $(this).children("div").eq(layerCounter[sCount-1]).addClass(sett.activeClassName);   
                 });
             });
-        }
-        );	
-    }
-    
+        });	
+    }   
 }
